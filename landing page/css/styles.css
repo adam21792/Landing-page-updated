@@ -1,0 +1,207 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+}
+
+/* Header and Navbar */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 1em 0;
+}
+
+header .navbar.show {
+  display: flex;
+}
+
+.navbar.show {
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  margin: 0 1em;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffa500;
+}
+
+.nav-link.active {
+  color: rgb(255, 0, 234);
+  font-weight: bold;
+  border-bottom: 2px solid #ff0;
+}
+
+/* Mobile Toggle */
+#mobileToggle {
+  display: none;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background-color 0.3s ease;
+}
+
+#mobileToggle:hover {
+  background-color: #444;
+}
+
+#mobileToggle:focus {
+  outline: 2px solid #ffa500;
+}
+
+/* Hero Section */
+#hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+#hero-section h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+#hero-section p {
+  font-size: 1.5em;
+}
+
+/* Content Sections */
+section {
+  padding: 4em 2em;
+  margin: 2em auto;
+  max-width: 900px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+section.active {
+  background-color: #fffae5; /* Highlight background for active section */
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+section h2 {
+  font-size: 2em;
+  color: #444;
+  margin: 0.5em 0 1em;
+}
+
+section p {
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Scroll-to-Top Button */
+#scrollToTop {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#scrollToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollToTop:hover {
+  background-color: #ffa500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #mobileToggle {
+    display: block;
+    text-align: center;
+    align-items: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 1em 0.5em;
+    display: none;
+    text-align: center;
+    align-items: center;
+  }
+
+  .nav-link {
+    margin: 0.5em 0;
+    font-size: 0.9em;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1em;
+    text-align: center;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 0.8em;
+    margin: 0.3em 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  #hero-section h1 {
+    font-size: 1.8em;
+  }
+
+  #hero-section p {
+    font-size: 0.9em;
+  }
+}
